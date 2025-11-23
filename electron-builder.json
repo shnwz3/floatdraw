@@ -1,0 +1,40 @@
+{
+	"appId": "com.floatdraw.app",
+	"productName": "FloatDraw",
+	"directories": {
+		"output": "build"
+	},
+	"win": {
+		"target": ["nsis", "zip"],
+		"icon": "./assets/logo.ico"
+	},
+	"nsis": {
+		"oneClick": false,
+		"perMachine": true,
+		"allowElevation": true,
+		"allowToChangeInstallationDirectory": true
+	},
+	"linux": {
+		"target": ["AppImage", "deb", "pacman", "tar.xz"],
+		"icon": "./assets/logo.icns"
+	},
+	"deb": {
+		"depends": ["imagemagick"]
+	},
+	"pacman": {
+		"depends": ["imagemagick"]
+	},
+	"mac": {
+		"target": ["dmg"],
+		"icon": "./assets/logo.icns",
+		"hardenedRuntime": true,
+		"gatekeeperAssess": false,
+		"entitlements": "builder/entitlements.mac.plist",
+		"entitlementsInherit": "builder/entitlements.mac.plist",
+		"minimumSystemVersion": "10.14"
+	},
+	"files": ["!README.md", "!assets/screenshot*.png", "!.vscode/${/*}"],
+	"publish": {
+		"provider": "github"
+	}
+}

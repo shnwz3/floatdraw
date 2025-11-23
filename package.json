@@ -1,0 +1,32 @@
+{
+	"name": "floatdraw",
+	"version": "0.1.0",
+	"description": "FloatDraw - A powerful screen annotation tool",
+	"main": "index.js",
+	"scripts": {
+		"start": "electron .",
+		"build:wl": "electron-builder build -wl --publish never --config ./electron-builder.json",
+		"build:single": "electron-builder build --publish never --config ./electron-builder.json",
+		"deploy:wl": "electron-builder build -wl --publish always --config ./electron-builder.json",
+		"_private:build:macos": "electron-builder build -m --publish never --config ./electron-builder.json"
+	},
+	"author": {
+		"name": "shnwz3",
+		"email": "mr.shahnawaz03@gmail.com"
+	},
+	"license": "ISC",
+	"devDependencies": {
+		"electron": "^11.2.3",
+		"electron-builder": "^22.11.7",
+		"electron-notarize": "^1.1.1"
+	},
+	"dependencies": {
+		"jquery": "^3.6.0",
+		"konva": "^7.2.5",
+		"screenshot-desktop": "^1.12.3"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/shnwz3/floatdraw.git"
+	}
+}
